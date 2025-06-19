@@ -61,7 +61,7 @@
 				<td><%=guestList.get(i).getName() %></td>
 				<td><%=guestList.get(i).getDate() %></td>
 				<td>
-					<a href="http://localhost:8080/guestbook/gbc?action=dform">삭제</a>
+					<a href="http://localhost:8080/guestbook/gbc?action=dform&no=<%=guestList.get(i).getNo()%>">삭제</a>
 				</td>
 			</tr>
 			<tr>

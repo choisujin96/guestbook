@@ -49,8 +49,6 @@ public class GuestbookController extends HttpServlet {
 			
 			RequestDispatcher rd = request.getRequestDispatcher("/addList.jsp");
 			rd.forward(request, response);
-			
-			
 
 			
 		} else if("write".equals(action)) {// 얘가 등록업무
@@ -97,14 +95,10 @@ public class GuestbookController extends HttpServlet {
 			
 			response.sendRedirect("http://localhost:8080/guestbook/gbc?action=list");
 		}
-		
-
-		
+				
 	}
 
-	
-	
-	
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
