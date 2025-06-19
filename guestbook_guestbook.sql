@@ -33,7 +33,13 @@ values(null, '이효리', '000', '방가방가 햄토리^ㅠ^',now());
 insert into guestbook
 values(null, '유재석', '111', '안녕하세요^^ 유재석입니다.',now());
 
-
+insert into guestbook
+values(null, '울랄라', '111', '니난농니나농',now());
 
 delete from guestbook
 where no = 6;
+
+
+delete from guestbook
+where no = '1'
+and password = '000' ;

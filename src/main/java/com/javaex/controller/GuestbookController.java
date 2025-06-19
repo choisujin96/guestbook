@@ -54,14 +54,13 @@ public class GuestbookController extends HttpServlet {
 
 			
 		} else if("write".equals(action)) {// 얘가 등록업무
-			System.out.println("등록"); //여기까지 체크 후 뒤에 코드 짜기
+			System.out.println("등록"); //확인ㅇㅇ
 			
 			//파라미터 3개
-			//int no = Integer.parseInt(request.getParameter("no"));
 			String name = request.getParameter("name");
 			String pw = request.getParameter("password");
 			String content = request.getParameter("content");
-			//String date = request.getParameter("reg_date");
+		
 			
 			GuestVO guestVO = new GuestVO(name, pw, content);
 					
@@ -76,8 +75,8 @@ public class GuestbookController extends HttpServlet {
 		}else if("dform".equals(action)) { //삭제폼
 			
 			System.out.println("삭제폼"); //확인ㅇㅋ
-		
-
+			
+			
 		    // 포워드
 		    RequestDispatcher rd = request.getRequestDispatcher("/deleteForm.jsp");
 		    rd.forward(request, response);
@@ -87,10 +86,14 @@ public class GuestbookController extends HttpServlet {
 		}else if("delete".equals(action)) { //삭제
 			System.out.println("삭제"); //확인오케
 			
+			int no = Integer.parseInt(request.getParameter("no"));
 			String pw = request.getParameter("password");
 			
+			GuestVO guestVO = new GuestVO(no, pw);
+			
+			
 			GuestbookDAO guestbookDAO = new GuestbookDAO();
-			guestbookDAO.guestDelete(pw);
+			guestbookDAO.guestDelete(no, pw);
 			
 			response.sendRedirect("http://localhost:8080/guestbook/gbc?action=list");
 		}

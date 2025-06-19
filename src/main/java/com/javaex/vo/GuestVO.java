@@ -21,6 +21,17 @@ public class GuestVO {
 	
 	
 
+	public GuestVO(int no, String pw) {
+		super();
+		this.no = no;
+		this.pw = pw;
+	}
+
+
+
+
+
+
 	public GuestVO(int no) {
 		super();
 		this.no = no;

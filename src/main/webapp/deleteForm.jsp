@@ -15,7 +15,8 @@
 				<tr>
 					<td>비밀번호</td>
 					<td>
-						<input type="password" name="password" value="">
+						<input type="hidden" name="no" value="">
+						<input type="password" name="password" value="<%=%>">
 					</td>
 					<td>
 						<button type="button">삭제</button>

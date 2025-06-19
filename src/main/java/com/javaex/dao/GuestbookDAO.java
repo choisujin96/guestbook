@@ -144,11 +144,11 @@ public class GuestbookDAO {
 
 				//-바인딩
 				pstmt = conn.prepareStatement(query);
-				//pstmt.setInt(1, guestVO.getNo());
+				
 				pstmt.setString(1, guestVO.getName());
 				pstmt.setString(2, guestVO.getPw());
 				pstmt.setString(3, guestVO.getContent());
-				//pstmt.setString(5, guestVO.getDate());
+			
 				
 				//-실행
 				count = pstmt.executeUpdate();
@@ -166,7 +166,7 @@ public class GuestbookDAO {
 		}
 
 		
-		public int guestDelete (String pw) {
+		public int guestDelete (int no, String pw) {
 			
 			System.out.println("guestDelete");
 			
@@ -177,11 +177,13 @@ public class GuestbookDAO {
 			try {
 				//-SQL문 준비
 				String query =" delete from  guestbook ";
-				query += " where password = ? ";
+				query += " where no = ? ";
+				query += " and password = ? ";
 				
 				//-바인딩
 				pstmt = conn.prepareStatement(query);
-				pstmt.setString(1, pw);
+				pstmt.setInt(1, no);
+				pstmt.setString(2, pw);
 
 				
 				//-실행
@@ -198,9 +200,7 @@ public class GuestbookDAO {
 			this.close();
 			
 			return count;
-			
-			
-			
+
 		}
 
 }
